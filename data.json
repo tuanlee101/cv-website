@@ -1,0 +1,140 @@
+{
+  "_huongDan": "TOÀN BỘ nội dung CV nằm trong file này — sửa ở đây, không cần chạm vào index.html. Mọi chỗ cần bạn điền đều được đánh dấu [CẦN ĐIỀN]. Các key bắt đầu bằng dấu _ sẽ bị bỏ qua khi render.",
+
+  "profile": {
+    "name": "[CẦN ĐIỀN: Họ và tên]",
+    "title": "[CẦN ĐIỀN: Chức danh — VD: Front-end Developer]",
+    "summary": "[CẦN ĐIỀN: 1 câu tóm tắt nghề nghiệp — VD: 5 năm xây dựng giao diện web hiệu năng cao bằng React và TypeScript, tập trung vào trải nghiệm người dùng và tốc độ tải trang.]",
+    "avatar": "assets/avatar-placeholder.svg",
+    "avatarAlt": "Ảnh đại diện của [CẦN ĐIỀN: Họ và tên]",
+    "location": "[CẦN ĐIỀN: Thành phố, Việt Nam]",
+    "email": "[CẦN ĐIỀN: email@example.com]",
+    "phone": "[CẦN ĐIỀN: 09xx xxx xxx]",
+    "cvFile": "",
+    "_cvFile_note": "Để trống = nút 'Tải CV (PDF)' sẽ mở hộp thoại in (chọn Save as PDF). Có file PDF thật thì ghi đường dẫn, VD: 'cv/nguyen-van-a-cv.pdf'.",
+    "availability": "[CẦN ĐIỀN: Trạng thái — VD: Sẵn sàng nhận việc full-time / remote]",
+    "socials": [
+      { "label": "GitHub", "icon": "github", "url": "[CẦN ĐIỀN: https://github.com/username]" },
+      { "label": "LinkedIn", "icon": "linkedin", "url": "[CẦN ĐIỀN: https://linkedin.com/in/username]" },
+      { "label": "Email", "icon": "mail", "url": "[CẦN ĐIỀN: mailto:email@example.com]" },
+      { "label": "Website", "icon": "globe", "url": "[CẦN ĐIỀN: https://example.com]" }
+    ]
+  },
+
+  "about": {
+    "paragraphs": [
+      "[CẦN ĐIỀN: 3–5 câu giới thiệu bản thân — bạn đang làm gì, mạnh ở đâu, đã làm được gì đáng kể.]",
+      "[CẦN ĐIỀN: Thế mạnh chuyên môn — VD: xây dựng kiến trúc front-end, tối ưu hiệu năng, làm việc với design system.]",
+      "[CẦN ĐIỀN: Định hướng nghề nghiệp 1–2 năm tới.]"
+    ],
+    "facts": [
+      { "value": "[CẦN ĐIỀN]", "label": "Năm kinh nghiệm" },
+      { "value": "[CẦN ĐIỀN]", "label": "Dự án đã tham gia" },
+      { "value": "[CẦN ĐIỀN]", "label": "Lĩnh vực chính" }
+    ]
+  },
+
+  "skills": [
+    {
+      "group": "Ngôn ngữ & framework",
+      "items": [
+        { "name": "[CẦN ĐIỀN]", "level": null },
+        { "name": "[CẦN ĐIỀN]", "level": null },
+        { "name": "[CẦN ĐIỀN]", "level": null }
+      ]
+    },
+    {
+      "group": "Công cụ",
+      "items": [
+        { "name": "[CẦN ĐIỀN]", "level": null },
+        { "name": "[CẦN ĐIỀN]", "level": null },
+        { "name": "[CẦN ĐIỀN]", "level": null }
+      ]
+    },
+    {
+      "group": "Kỹ năng mềm",
+      "items": [
+        { "name": "[CẦN ĐIỀN]", "level": null },
+        { "name": "[CẦN ĐIỀN]", "level": null },
+        { "name": "[CẦN ĐIỀN]", "level": null }
+      ]
+    }
+  ],
+
+  "_skills_note": "level: null → hiện dạng tag (khuyến nghị, không bịa số %). Muốn có thanh mức độ thì đổi thành số 0–100, VD: { \"name\": \"React\", \"level\": 80 }.",
+
+  "experience": [
+    {
+      "title": "[CẦN ĐIỀN: Chức danh]",
+      "company": "[CẦN ĐIỀN: Tên công ty]",
+      "period": "MM/YYYY – MM/YYYY",
+      "location": "[CẦN ĐIỀN: Địa điểm / Remote]",
+      "bullets": [
+        "[CẦN ĐIỀN: thành tích 1 — nêu số liệu cụ thể, VD: tối ưu thời gian tải trang từ 4s xuống 1.2s]",
+        "[CẦN ĐIỀN: thành tích 2 — VD: giảm 35% số lỗi production sau khi thêm test tự động]",
+        "[CẦN ĐIỀN: thành tích 3 — VD: dẫn dắt 3 thành viên, bàn giao 12 tính năng trong 6 tháng]"
+      ]
+    },
+    {
+      "title": "[CẦN ĐIỀN: Chức danh]",
+      "company": "[CẦN ĐIỀN: Tên công ty]",
+      "period": "MM/YYYY – MM/YYYY",
+      "location": "[CẦN ĐIỀN: Địa điểm / Remote]",
+      "bullets": [
+        "[CẦN ĐIỀN: thành tích 1 kèm số liệu]",
+        "[CẦN ĐIỀN: thành tích 2 kèm số liệu]"
+      ]
+    }
+  ],
+
+  "projects": [
+    {
+      "name": "[CẦN ĐIỀN: Tên dự án 1]",
+      "description": "[CẦN ĐIỀN: câu 1 — dự án làm gì, cho ai.] [CẦN ĐIỀN: câu 2 — bạn làm phần nào, kết quả ra sao.]",
+      "tech": ["[CẦN ĐIỀN]", "[CẦN ĐIỀN]", "[CẦN ĐIỀN]"],
+      "demo": "[CẦN ĐIỀN: link demo]",
+      "source": "[CẦN ĐIỀN: link source]"
+    },
+    {
+      "name": "[CẦN ĐIỀN: Tên dự án 2]",
+      "description": "[CẦN ĐIỀN: 2 câu mô tả dự án.]",
+      "tech": ["[CẦN ĐIỀN]", "[CẦN ĐIỀN]"],
+      "demo": "[CẦN ĐIỀN: link demo]",
+      "source": "[CẦN ĐIỀN: link source]"
+    },
+    {
+      "name": "[CẦN ĐIỀN: Tên dự án 3]",
+      "description": "[CẦN ĐIỀN: 2 câu mô tả dự án.]",
+      "tech": ["[CẦN ĐIỀN]", "[CẦN ĐIỀN]"],
+      "demo": "[CẦN ĐIỀN: link demo]",
+      "source": "[CẦN ĐIỀN: link source]"
+    }
+  ],
+
+  "education": [
+    {
+      "title": "[CẦN ĐIỀN: Bằng cấp / chuyên ngành]",
+      "school": "[CẦN ĐIỀN: Trường]",
+      "period": "MM/YYYY – MM/YYYY",
+      "note": "[CẦN ĐIỀN: GPA / học bổng / thành tích (bỏ trống nếu không cần)]"
+    }
+  ],
+
+  "certificates": [
+    { "name": "[CẦN ĐIỀN: Tên chứng chỉ]", "issuer": "[CẦN ĐIỀN: Tổ chức cấp]", "year": "YYYY" },
+    { "name": "[CẦN ĐIỀN: Tên chứng chỉ]", "issuer": "[CẦN ĐIỀN: Tổ chức cấp]", "year": "YYYY" }
+  ],
+
+  "contact": {
+    "note": "[CẦN ĐIỀN: 1 câu mời liên hệ — VD: Mình thường phản hồi trong vòng 24 giờ.]",
+    "items": [
+      { "label": "Email", "icon": "mail", "value": "[CẦN ĐIỀN: email@example.com]", "url": "[CẦN ĐIỀN: mailto:email@example.com]" },
+      { "label": "Điện thoại", "icon": "phone", "value": "[CẦN ĐIỀN: 09xx xxx xxx]", "url": "[CẦN ĐIỀN: tel:+849xxxxxxxx]" },
+      { "label": "Địa điểm", "icon": "globe", "value": "[CẦN ĐIỀN: Thành phố, Việt Nam]", "url": "" }
+    ]
+  },
+
+  "footer": {
+    "copyright": "[CẦN ĐIỀN: Họ và tên]"
+  }
+}

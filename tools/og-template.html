@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>OG image template</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700&display=swap">
+<style>
+  /* Template ảnh chia sẻ 1200×630. Sửa nội dung ở đây rồi chạy tools/make-og-image.sh */
+  * { box-sizing: border-box; margin: 0; }
+  body {
+    width: 1200px; height: 630px; overflow: hidden;
+    font-family: "Be Vietnam Pro", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    background: #0F172A; color: #fff; position: relative;
+  }
+  .glow { position: absolute; inset: 0; background: radial-gradient(760px 420px at 88% -12%, rgba(56,189,248,.35), transparent 68%); }
+  .grid { position: absolute; inset: 0; opacity: .16;
+    background-image: linear-gradient(#38BDF8 1px, transparent 1px), linear-gradient(90deg, #38BDF8 1px, transparent 1px);
+    background-size: 60px 60px; mask-image: radial-gradient(700px 400px at 10% 110%, #000, transparent 70%); }
+  .wrap { position: relative; height: 100%; padding: 74px 84px; display: flex; flex-direction: column; justify-content: space-between; }
+  .tag { display: inline-flex; align-items: center; gap: 12px; font-size: 22px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: #38BDF8; }
+  .tag::before { content: ""; width: 46px; height: 4px; border-radius: 2px; background: #38BDF8; }
+  h1 { font-size: 74px; line-height: 1.1; font-weight: 700; letter-spacing: -.02em; max-width: 960px; }
+  .title { font-size: 32px; color: #38BDF8; font-weight: 600; margin-top: 18px; }
+  .summary { font-size: 24px; color: #A9B8CC; margin-top: 26px; max-width: 860px; line-height: 1.45; }
+  .foot { display: flex; align-items: center; justify-content: space-between; font-size: 22px; color: #8B9CB4; }
+  .foot b { color: #fff; font-weight: 600; }
+  .badge { display: inline-flex; align-items: center; gap: 14px; padding: 12px 22px; border: 1px solid rgba(56,189,248,.45); border-radius: 999px; color: #38BDF8; font-weight: 600; font-size: 20px; }
+</style>
+</head>
+<body>
+  <div class="glow"></div>
+  <div class="grid"></div>
+  <div class="wrap">
+    <div>
+      <span class="tag">CV cá nhân</span>
+      <h1 style="margin-top:26px">[CẦN ĐIỀN: Họ và tên]</h1>
+      <p class="title">[CẦN ĐIỀN: Chức danh — VD: Front-end Developer]</p>
+      <p class="summary">[CẦN ĐIỀN: 1 câu tóm tắt nghề nghiệp]</p>
+    </div>
+    <div class="foot">
+      <span><b>github.com/[CẦN ĐIỀN]</b> · [CẦN ĐIỀN: email@example.com]</span>
+      <span class="badge">Xem CV đầy đủ →</span>
+    </div>
+  </div>
+</body>
+</html>

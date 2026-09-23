@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="color-scheme" content="light dark">
+
+  <title>[CẦN ĐIỀN: Họ và tên] — [CẦN ĐIỀN: Chức danh] | CV</title>
+  <meta name="description" content="CV cá nhân của [CẦN ĐIỀN: Họ và tên] — [CẦN ĐIỀN: Chức danh]. Kinh nghiệm làm việc, kỹ năng, dự án tiêu biểu và thông tin liên hệ.">
+  <meta name="author" content="[CẦN ĐIỀN: Họ và tên]">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://tuanlee101.github.io/cv-website/">
+
+  <!-- Favicon (SVG, không cần file ảnh rời) -->
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/favicon.svg">
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0B1220" media="(prefers-color-scheme: dark)">
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="profile">
+  <meta property="og:locale" content="vi_VN">
+  <meta property="og:site_name" content="CV — [CẦN ĐIỀN: Họ và tên]">
+  <meta property="og:title" content="[CẦN ĐIỀN: Họ và tên] — [CẦN ĐIỀN: Chức danh]">
+  <meta property="og:description" content="CV cá nhân: kinh nghiệm làm việc, kỹ năng, dự án tiêu biểu và thông tin liên hệ.">
+  <meta property="og:url" content="https://tuanlee101.github.io/cv-website/">
+  <meta property="og:image" content="https://tuanlee101.github.io/cv-website/assets/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="[CẦN ĐIỀN: Họ và tên] — [CẦN ĐIỀN: Chức danh]">
+  <meta name="twitter:description" content="CV cá nhân: kinh nghiệm làm việc, kỹ năng, dự án tiêu biểu và thông tin liên hệ.">
+  <meta name="twitter:image" content="https://tuanlee101.github.io/cv-website/assets/og-image.png">
+
+  <!-- 1 font duy nhất: Be Vietnam Pro (đủ dấu tiếng Việt) + fallback hệ thống -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap">
+
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- JSON-LD Person: bản tĩnh để crawler đọc được; script.js sẽ đồng bộ lại từ data.json -->
+  <script type="application/ld+json" id="ld-json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "[CẦN ĐIỀN: Họ và tên]",
+    "jobTitle": "[CẦN ĐIỀN: Chức danh]",
+    "url": "https://tuanlee101.github.io/cv-website/",
+    "email": "mailto:[CẦN ĐIỀN: email]",
+    "address": { "@type": "PostalAddress", "addressLocality": "[CẦN ĐIỀN: Thành phố]", "addressCountry": "VN" },
+    "sameAs": ["https://github.com/[CẦN ĐIỀN]"]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Bỏ qua tới nội dung chính</a>
+
+  <header class="site-header no-print">
+    <div class="wrap header-inner">
+      <a class="brand" href="#hero" id="brand">CV<span class="brand-dot">.</span></a>
+
+      <nav class="site-nav" aria-label="Điều hướng chính">
+        <ul>
+          <li><a href="#about">Giới thiệu</a></li>
+          <li><a href="#skills">Kỹ năng</a></li>
+          <li><a href="#experience">Kinh nghiệm</a></li>
+          <li><a href="#projects">Dự án</a></li>
+          <li><a href="#education">Học vấn</a></li>
+          <li><a href="#contact">Liên hệ</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <button type="button" id="theme-toggle" class="icon-btn theme-toggle"
+                aria-label="Bật chế độ tối" aria-pressed="false" title="Bật/tắt chế độ tối">
+          <span class="icon-sun" aria-hidden="true"></span>
+          <span class="icon-moon" aria-hidden="true"></span>
+        </button>
+        <button type="button" id="print-btn" class="icon-btn" aria-label="In hoặc lưu CV thành PDF" title="In / lưu PDF">
+          <span class="icon-print" aria-hidden="true"></span>
+        </button>
+      </div>
+    </div>
+    <div class="scroll-progress" aria-hidden="true"><span id="scroll-bar"></span></div>
+  </header>
+
+  <main id="main">
+    <!-- 1. HERO -->
+    <section id="hero" class="hero" aria-labelledby="hero-name">
+      <div class="wrap" id="hero-content"></div>
+    </section>
+
+    <!-- 2. GIỚI THIỆU -->
+    <section id="about" class="section" aria-labelledby="about-title">
+      <div class="wrap">
+        <div class="section-head">
+          <h2 id="about-title" class="section-title">Giới thiệu</h2>
+        </div>
+        <div id="about-content"></div>
+      </div>
+    </section>
+
+    <!-- 3. KỸ NĂNG -->
+    <section id="skills" class="section section-alt" aria-labelledby="skills-title">
+      <div class="wrap">
+        <div class="section-head">
+          <h2 id="skills-title" class="section-title">Kỹ năng</h2>
+          <p class="section-sub">Ba nhóm chính: ngôn ngữ &amp; framework, công cụ, kỹ năng mềm.</p>
+        </div>
+        <div id="skills-grid" class="skills-grid"></div>
+      </div>
+    </section>
+
+    <!-- 4. KINH NGHIỆM -->
+    <section id="experience" class="section" aria-labelledby="experience-title">
+      <div class="wrap">
+        <div class="section-head">
+          <h2 id="experience-title" class="section-title">Kinh nghiệm làm việc</h2>
+          <p class="section-sub">Mỗi mục kèm thành tích có số liệu cụ thể.</p>
+        </div>
+        <ol id="experience-timeline" class="timeline"></ol>
+      </div>
+    </section>
+
+    <!-- 5. DỰ ÁN -->
+    <section id="projects" class="section section-alt" aria-labelledby="projects-title">
+      <div class="wrap">
+        <div class="section-head">
+          <h2 id="projects-title" class="section-title">Dự án tiêu biểu</h2>
+        </div>
+        <div id="projects-grid" class="cards-grid"></div>
+      </div>
+    </section>
+
+    <!-- 6. HỌC VẤN & CHỨNG CHỈ -->
+    <section id="education" class="section" aria-labelledby="education-title">
+      <div class="wrap">
+        <div class="section-head">
+          <h2 id="education-title" class="section-title">Học vấn &amp; Chứng chỉ</h2>
+        </div>
+        <div class="edu-columns">
+          <div>
+            <h3 class="sub-title">Học vấn</h3>
+            <ol id="education-list" class="timeline timeline-short"></ol>
+          </div>
+          <div>
+            <h3 class="sub-title">Chứng chỉ</h3>
+            <ul id="cert-list" class="cert-list"></ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. LIÊN HỆ -->
+    <section id="contact" class="section section-alt" aria-labelledby="contact-title">
+      <div class="wrap">
+        <div class="section-head">
+          <h2 id="contact-title" class="section-title">Liên hệ</h2>
+          <p class="section-sub" id="contact-note"></p>
+        </div>
+        <div class="contact-grid">
+          <ul id="contact-info" class="contact-info"></ul>
+
+          <form id="contact-form" class="contact-form no-print" novalidate>
+            <div class="field">
+              <label for="cf-name">Họ và tên <span aria-hidden="true">*</span></label>
+              <input type="text" id="cf-name" name="name" autocomplete="name" required aria-describedby="cf-name-err">
+              <p class="field-error" id="cf-name-err" hidden></p>
+            </div>
+            <div class="field">
+              <label for="cf-email">Email <span aria-hidden="true">*</span></label>
+              <input type="email" id="cf-email" name="email" autocomplete="email" required aria-describedby="cf-email-err">
+              <p class="field-error" id="cf-email-err" hidden></p>
+            </div>
+            <div class="field">
+              <label for="cf-subject">Tiêu đề</label>
+              <input type="text" id="cf-subject" name="subject" aria-describedby="cf-subject-err">
+              <p class="field-error" id="cf-subject-err" hidden></p>
+            </div>
+            <div class="field">
+              <label for="cf-message">Nội dung <span aria-hidden="true">*</span></label>
+              <textarea id="cf-message" name="message" rows="5" required aria-describedby="cf-message-err"></textarea>
+              <p class="field-error" id="cf-message-err" hidden></p>
+            </div>
+            <div class="form-actions">
+              <button type="submit" class="btn btn-primary">Gửi tin nhắn</button>
+              <button type="reset" class="btn btn-ghost">Xoá nội dung</button>
+            </div>
+            <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+            <p class="form-hint">
+              Form không có backend: khi gửi, trang sẽ mở ứng dụng email của bạn với nội dung đã điền
+              (người nhận: email trong <code>data.json</code>).
+            </p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <p id="footer-copy">© [CẦN ĐIỀN: Họ và tên]</p>
+      <button type="button" id="to-top" class="btn btn-ghost no-print">
+        <span class="icon-up" aria-hidden="true"></span> Về đầu trang
+      </button>
+    </div>
+  </footer>
+
+  <noscript>
+    <p class="noscript">Trang này dùng JavaScript để đọc nội dung từ <code>data.json</code>. Hãy bật JavaScript, hoặc mở trực tiếp file <code>data.json</code> để xem nội dung.</p>
+  </noscript>
+
+  <script src="script.js"></script>
+</body>
+</html>

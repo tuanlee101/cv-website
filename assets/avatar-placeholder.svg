@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-label="Ảnh đại diện mặc định — hãy thay bằng ảnh thật">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#E2E8F0"/>
+      <stop offset="1" stop-color="#CBD5E1"/>
+    </linearGradient>
+  </defs>
+  <rect width="240" height="240" fill="url(#bg)"/>
+  <circle cx="120" cy="92" r="42" fill="#94A3B8"/>
+  <path d="M36 240c0-46 38-76 84-76s84 30 84 76z" fill="#94A3B8"/>
+</svg>
