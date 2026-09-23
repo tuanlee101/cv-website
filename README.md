@@ -92,7 +92,6 @@ Cách 2 — nhánh `main` + thư mục root (đơn giản nhất):
 - [ ] Chạy Lighthouse (DevTools → Lighthouse) — mục tiêu ≥ 95 cả 4 mục.
 
 ## 5. Ghi chú kỹ thuật
-
 - **Dark mode**: nút bật/tắt ở header, lưu vào `localStorage` (`cv-theme`); lần đầu chưa chọn thì
   theo `prefers-color-scheme` của hệ điều hành.
 - **In**: `@media print` đặt khổ A4, ẩn nút/nav/form, `break-inside: avoid` cho card & mục timeline.
@@ -104,5 +103,28 @@ Cách 2 — nhánh `main` + thư mục root (đơn giản nhất):
   không cần email client: thay phần `submit` trong `script.js` bằng endpoint Formspree/Google Form.
 - **SEO**: `title`/`description`/OG/Twitter/favicon/JSON-LD `schema.org/Person` — phần lớn được
   đồng bộ tự động từ `data.json` lúc tải trang; bản JSON-LD tĩnh trong `index.html` giữ vai trò dự phòng.
+
+## 6. Kiểm thử tự động (không cần cài gì)
+
+Bộ test headless Chrome + CDP nằm trong `tools/`, không dùng Puppeteer/npm. Chạy:
+
+```bash
+# 1) mở Chrome ở chế độ test (một lần)
+"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" --headless=new \
+  --disable-gpu --no-first-run --remote-debugging-port=9222 \
+  --user-data-dir=/tmp/cdp-cv-profile "http://localhost:8000/" &
+
+# 2) chạy test trên bản local
+python3 -m http.server 8000 &     # nếu chưa chạy
+node tools/verify.mjs             # kết quả: N pass / M fail + ảnh trong tools/shots/
+
+# hoặc test thẳng bản LIVE trên GitHub Pages
+BASE=https://tuanlee101.github.io/cv-website/ node tools/verify.mjs
+```
+
+Bộ test kiểm tra thật: render đủ số phần tử từ `data.json`, dark mode + `localStorage` (click → đổi màu → reload vẫn nhớ),
+validate form (bỏ trống, email sai, hợp lệ), `@media print` (ẩn nav/nút/form, chữ đen nền trắng, không cắt card),
+responsive 360/768/1440 (không tràn ngang, đúng số cột), tương phản màu WCAG AA cho cả 2 theme, không lỗi JS/404.
+`tools/make-og-image.sh` sinh lại `assets/og-image.png` (1200×630) từ `tools/og-template.html`.
 
 Nguồn ý tưởng yêu cầu: `prompt-website-cv.md` (prompt gốc dùng để sinh dự án này).

@@ -1,0 +1,5 @@
+# ảnh chụp do test sinh ra (không cần commit)
+tools/shots/*.png
+
+# macOS
+.DS_Store
