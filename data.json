@@ -1,119 +1,141 @@
 {
-  "_huongDan": "TOÀN BỘ nội dung CV nằm trong file này — sửa ở đây, không cần chạm vào index.html. Mọi chỗ cần bạn điền đều được đánh dấu [CẦN ĐIỀN]. Các key bắt đầu bằng dấu _ sẽ bị bỏ qua khi render.",
+  "_huongDan": "TOÀN BỘ nội dung CV nằm trong file này — sửa ở đây, không cần chạm vào index.html. Bản này đã định hướng cho vị trí BA/PO (Business Analyst / Product Owner). Quy ước: '[CẦN ĐIỀN: ...]' = thông tin/danh tính thật của bạn; [X], [Y], [N], [X%] trong bullet = SỐ LIỆU THẬT của bạn (đừng để nguyên các con số trong ngoặc vuông khi gửi cho nhà tuyển dụng). Các key bắt đầu bằng dấu _ chỉ là ghi chú, không được render.",
 
   "profile": {
     "name": "[CẦN ĐIỀN: Họ và tên]",
-    "title": "[CẦN ĐIỀN: Chức danh — VD: Front-end Developer]",
-    "summary": "[CẦN ĐIỀN: 1 câu tóm tắt nghề nghiệp — VD: 5 năm xây dựng giao diện web hiệu năng cao bằng React và TypeScript, tập trung vào trải nghiệm người dùng và tốc độ tải trang.]",
+    "title": "[CẦN ĐIỀN: Business Analyst / Product Owner — VD: Product Owner · 5 năm kinh nghiệm]",
+    "summary": "[CẦN ĐIỀN: 1 câu tóm tắt — VD: Product Owner 5 năm ở lĩnh vực fintech, mạnh về làm rõ yêu cầu, thiết kế quy trình nghiệp vụ và quản lý backlog cho team 12 người.]",
     "avatar": "assets/avatar-placeholder.svg",
     "avatarAlt": "Ảnh đại diện của [CẦN ĐIỀN: Họ và tên]",
-    "location": "[CẦN ĐIỀN: Thành phố, Việt Nam]",
+    "location": "[CẦN ĐIỀN: Hà Nội, Việt Nam]",
     "email": "[CẦN ĐIỀN: email@example.com]",
     "phone": "[CẦN ĐIỀN: 09xx xxx xxx]",
     "cvFile": "",
-    "_cvFile_note": "Để trống = nút 'Tải CV (PDF)' sẽ mở hộp thoại in (chọn Save as PDF). Có file PDF thật thì ghi đường dẫn, VD: 'cv/nguyen-van-a-cv.pdf'.",
-    "availability": "[CẦN ĐIỀN: Trạng thái — VD: Sẵn sàng nhận việc full-time / remote]",
+    "_cvFile_note": "Để trống = nút 'Tải CV (PDF)' sẽ mở hộp thoại in (chọn Save as PDF). Có file PDF thật thì ghi đường dẫn, VD: 'cv/nguyen-van-a-ba-cv.pdf'.",
+    "availability": "[CẦN ĐIỀN: Sẵn sàng nhận vị trí BA/PO — full-time / hybrid]",
     "socials": [
-      { "label": "GitHub", "icon": "github", "url": "[CẦN ĐIỀN: https://github.com/username]" },
       { "label": "LinkedIn", "icon": "linkedin", "url": "[CẦN ĐIỀN: https://linkedin.com/in/username]" },
+      { "label": "GitHub", "icon": "github", "url": "[CẦN ĐIỀN: https://github.com/username]" },
       { "label": "Email", "icon": "mail", "url": "[CẦN ĐIỀN: mailto:email@example.com]" },
-      { "label": "Website", "icon": "globe", "url": "[CẦN ĐIỀN: https://example.com]" }
+      { "label": "Portfolio", "icon": "globe", "url": "[CẦN ĐIỀN: https://example.com]" }
     ]
   },
 
   "about": {
     "paragraphs": [
-      "[CẦN ĐIỀN: 3–5 câu giới thiệu bản thân — bạn đang làm gì, mạnh ở đâu, đã làm được gì đáng kể.]",
-      "[CẦN ĐIỀN: Thế mạnh chuyên môn — VD: xây dựng kiến trúc front-end, tối ưu hiệu năng, làm việc với design system.]",
-      "[CẦN ĐIỀN: Định hướng nghề nghiệp 1–2 năm tới.]"
+      "[CẦN ĐIỀN: 2–3 câu về bạn — đang làm BA/PO ở đâu, lĩnh vực gì (fintech, thương mại điện tử, logistics, ERP…), quy mô sản phẩm và team.]",
+      "[CẦN ĐIỀN: Thế mạnh BA/PO — làm rõ yêu cầu với stakeholder, chuyển vấn đề nghiệp vụ thành user story/acceptance criteria, thiết kế quy trình as-is → to-be, ưu tiên backlog theo giá trị.]",
+      "[CẦN ĐIỀN: Kinh nghiệm phối hợp — làm việc với dev/QA/CS, chạy workshop, hỗ trợ UAT và go-live; kèm chỉ số cải thiện cụ thể.]",
+      "[CẦN ĐIỀN: Định hướng 1–2 năm tới — VD: đi sâu vào sản phẩm B2B SaaS, lấy chứng chỉ PSPO II / CBAP.]"
     ],
     "facts": [
-      { "value": "[CẦN ĐIỀN]", "label": "Năm kinh nghiệm" },
-      { "value": "[CẦN ĐIỀN]", "label": "Dự án đã tham gia" },
-      { "value": "[CẦN ĐIỀN]", "label": "Lĩnh vực chính" }
+      { "value": "[N] năm", "label": "Kinh nghiệm BA/PO" },
+      { "value": "[N]", "label": "Dự án đã dẫn dắt" },
+      { "value": "[CẦN ĐIỀN: lĩnh vực chính]", "label": "Lĩnh vực — VD: fintech, e-commerce" }
     ]
   },
 
   "skills": [
     {
-      "group": "Ngôn ngữ & framework",
+      "group": "Nghiệp vụ & phương pháp",
       "items": [
-        { "name": "[CẦN ĐIỀN]", "level": null },
-        { "name": "[CẦN ĐIỀN]", "level": null },
-        { "name": "[CẦN ĐIỀN]", "level": null }
+        { "name": "Thu thập & làm rõ yêu cầu (elicitation, phỏng vấn, workshop)", "level": null },
+        { "name": "User story · acceptance criteria · BRD/SRS", "level": null },
+        { "name": "Mô hình hoá quy trình BPMN 2.0, as-is → to-be", "level": null },
+        { "name": "Gap analysis · impact analysis · đặc tả API", "level": null },
+        { "name": "Quản lý backlog, roadmap, ưu tiên theo giá trị (RICE/MoSCoW)", "level": null }
       ]
     },
     {
       "group": "Công cụ",
       "items": [
-        { "name": "[CẦN ĐIỀN]", "level": null },
-        { "name": "[CẦN ĐIỀN]", "level": null },
-        { "name": "[CẦN ĐIỀN]", "level": null }
+        { "name": "Jira · Azure DevOps", "level": null },
+        { "name": "Confluence · Notion", "level": null },
+        { "name": "Figma · Miro (wireframe, user flow)", "level": null },
+        { "name": "SQL · Power BI / Looker Studio", "level": null },
+        { "name": "Postman / Swagger · Google Analytics 4", "level": null }
       ]
     },
     {
       "group": "Kỹ năng mềm",
       "items": [
-        { "name": "[CẦN ĐIỀN]", "level": null },
-        { "name": "[CẦN ĐIỀN]", "level": null },
-        { "name": "[CẦN ĐIỀN]", "level": null }
+        { "name": "Làm việc với stakeholder đa phòng ban", "level": null },
+        { "name": "Facilitation workshop · thuyết trình", "level": null },
+        { "name": "Đàm phán phạm vi · quản lý kỳ vọng", "level": null },
+        { "name": "Viết tài liệu rõ ràng cho cả team dev và business", "level": null },
+        { "name": "Mentoring BA junior · onboarding", "level": null }
       ]
     }
   ],
 
-  "_skills_note": "level: null → hiện dạng tag (khuyến nghị, không bịa số %). Muốn có thanh mức độ thì đổi thành số 0–100, VD: { \"name\": \"React\", \"level\": 80 }.",
+  "_skills_note": "level: null → hiện dạng tag (khuyến nghị, không bịa số %). Muốn có thanh mức độ thì đổi thành số 0–100, VD: { \"name\": \"Jira\", \"level\": 90 }.",
 
   "experience": [
     {
-      "title": "[CẦN ĐIỀN: Chức danh]",
+      "title": "[CẦN ĐIỀN: Product Owner]",
       "company": "[CẦN ĐIỀN: Tên công ty]",
       "period": "MM/YYYY – MM/YYYY",
-      "location": "[CẦN ĐIỀN: Địa điểm / Remote]",
+      "location": "[CẦN ĐIỀN: Hà Nội / Hybrid]",
       "bullets": [
-        "[CẦN ĐIỀN: thành tích 1 — nêu số liệu cụ thể, VD: tối ưu thời gian tải trang từ 4s xuống 1.2s]",
-        "[CẦN ĐIỀN: thành tích 2 — VD: giảm 35% số lỗi production sau khi thêm test tự động]",
-        "[CẦN ĐIỀN: thành tích 3 — VD: dẫn dắt 3 thành viên, bàn giao 12 tính năng trong 6 tháng]"
+        "Quản lý backlog [N] mục, ưu tiên theo giá trị nghiệp vụ và rủi ro; giữ tỉ lệ hoàn thành cam kết sprint đạt [X%]",
+        "Chủ trì [N] buổi workshop làm rõ yêu cầu với các phòng ban; rút ngắn vòng làm rõ yêu cầu từ [X] xuống [Y] ngày",
+        "Viết user story + acceptance criteria cho [N] tính năng; giảm [X%] lỗi trả lại (rework) sau UAT",
+        "Định hình roadmap [N] quý cùng Head of Product; đưa [N] tính năng ra thị trường đúng hạn [X%]",
+        "Điều phối BA, dev, QA, CS trong [N] team để chốt phạm vi từng release; giảm [X%] thời gian họp chốt phạm vi"
       ]
     },
     {
-      "title": "[CẦN ĐIỀN: Chức danh]",
+      "title": "[CẦN ĐIỀN: Business Analyst / Senior BA]",
       "company": "[CẦN ĐIỀN: Tên công ty]",
       "period": "MM/YYYY – MM/YYYY",
-      "location": "[CẦN ĐIỀN: Địa điểm / Remote]",
+      "location": "[CẦN ĐIỀN: TP. Hồ Chí Minh / Onsite]",
       "bullets": [
-        "[CẦN ĐIỀN: thành tích 1 kèm số liệu]",
-        "[CẦN ĐIỀN: thành tích 2 kèm số liệu]"
+        "Phân tích quy trình as-is và thiết kế to-be cho nghiệp vụ [CẦN ĐIỀN: mảng nghiệp vụ]; cắt giảm [X] bước thủ công, tiết kiệm [N] giờ/tuần",
+        "Chủ trì elicitation (phỏng vấn, khảo sát, phân tích dữ liệu) với [N] stakeholder; tổng hợp tài liệu BRD/SRS cho [N] dự án",
+        "Đặc tả API và luồng chức năng, phối hợp QA xây [N] test case; giảm [X%] lỗi phát hiện muộn ở giai đoạn kiểm thử",
+        "Xây dashboard Power BI theo dõi [N] chỉ số nghiệp vụ, giúp ban lãnh đạo rút ngắn thời gian ra quyết định [X]"
+      ]
+    },
+    {
+      "title": "[CẦN ĐIỀN: Business Analyst]",
+      "company": "[CẦN ĐIỀN: Tên công ty]",
+      "period": "MM/YYYY – MM/YYYY",
+      "location": "[CẦN ĐIỀN: Địa điểm]",
+      "bullets": [
+        "Thu thập và làm rõ yêu cầu cho module [CẦN ĐIỀN: tên module], hoàn thành [N] tài liệu nghiệp vụ đúng tiến độ",
+        "Hỗ trợ UAT: chuẩn bị kịch bản, log lỗi và theo dõi tới khi đóng [N] issue",
+        "Làm việc trực tiếp với khách hàng để chốt phạm vi; giảm [X%] yêu cầu thay đổi phát sinh giữa sprint"
       ]
     }
   ],
 
   "projects": [
     {
-      "name": "[CẦN ĐIỀN: Tên dự án 1]",
-      "description": "[CẦN ĐIỀN: câu 1 — dự án làm gì, cho ai.] [CẦN ĐIỀN: câu 2 — bạn làm phần nào, kết quả ra sao.]",
-      "tech": ["[CẦN ĐIỀN]", "[CẦN ĐIỀN]", "[CẦN ĐIỀN]"],
-      "demo": "[CẦN ĐIỀN: link demo]",
-      "source": "[CẦN ĐIỀN: link source]"
+      "name": "[CẦN ĐIỀN: Dự án 1 — VD: Nền tảng tài chính số cho khách hàng cá nhân]",
+      "description": "[CẦN ĐIỀN: câu 1 — sản phẩm làm gì, cho ai, quy mô.] [CẦN ĐIỀN: câu 2 — bạn đảm nhiệm phần nào (PO/BA) và kết quả đo được.]",
+      "tech": ["Jira", "BPMN 2.0", "SQL", "Figma"],
+      "demo": "[CẦN ĐIỀN: link demo/sản phẩm]",
+      "source": "[CẦN ĐIỀN: link tài liệu/portfolio]"
     },
     {
-      "name": "[CẦN ĐIỀN: Tên dự án 2]",
-      "description": "[CẦN ĐIỀN: 2 câu mô tả dự án.]",
-      "tech": ["[CẦN ĐIỀN]", "[CẦN ĐIỀN]"],
+      "name": "[CẦN ĐIỀN: Dự án 2 — VD: Hệ thống đặt hàng & vận hành cho chuỗi bán lẻ]",
+      "description": "[CẦN ĐIỀN: 2 câu mô tả — bài toán nghiệp vụ, cách bạn phân tích/thiết kế và kết quả.]",
+      "tech": ["Confluence", "User story map", "Power BI"],
       "demo": "[CẦN ĐIỀN: link demo]",
-      "source": "[CẦN ĐIỀN: link source]"
+      "source": "[CẦN ĐIỀN: link tài liệu]"
     },
     {
-      "name": "[CẦN ĐIỀN: Tên dự án 3]",
-      "description": "[CẦN ĐIỀN: 2 câu mô tả dự án.]",
-      "tech": ["[CẦN ĐIỀN]", "[CẦN ĐIỀN]"],
+      "name": "[CẦN ĐIỀN: Dự án 3 — VD: CRM/B2B SaaS cho đội sales]",
+      "description": "[CẦN ĐIỀN: 2 câu mô tả — phạm vi, vai trò BA/PO, chỉ số cải thiện.]",
+      "tech": ["Azure DevOps", "Miro", "GA4"],
       "demo": "[CẦN ĐIỀN: link demo]",
-      "source": "[CẦN ĐIỀN: link source]"
+      "source": "[CẦN ĐIỀN: link tài liệu]"
     }
   ],
 
   "education": [
     {
-      "title": "[CẦN ĐIỀN: Bằng cấp / chuyên ngành]",
+      "title": "[CẦN ĐIỀN: Bằng cấp / chuyên ngành — VD: Cử nhân Quản trị kinh doanh]",
       "school": "[CẦN ĐIỀN: Trường]",
       "period": "MM/YYYY – MM/YYYY",
       "note": "[CẦN ĐIỀN: GPA / học bổng / thành tích (bỏ trống nếu không cần)]"
@@ -121,16 +143,17 @@
   ],
 
   "certificates": [
-    { "name": "[CẦN ĐIỀN: Tên chứng chỉ]", "issuer": "[CẦN ĐIỀN: Tổ chức cấp]", "year": "YYYY" },
-    { "name": "[CẦN ĐIỀN: Tên chứng chỉ]", "issuer": "[CẦN ĐIỀN: Tổ chức cấp]", "year": "YYYY" }
+    { "name": "[CẦN ĐIỀN: chứng chỉ — VD: Professional Scrum Product Owner I (PSPO I)]", "issuer": "Scrum.org", "year": "[YYYY]" },
+    { "name": "[CẦN ĐIỀN: chứng chỉ — VD: CBAP / ECBA]", "issuer": "IIBA", "year": "[YYYY]" },
+    { "name": "[CẦN ĐIỀN: chứng chỉ — VD: SQL & Data Analytics]", "issuer": "[CẦN ĐIỀN: tổ chức cấp]", "year": "[YYYY]" }
   ],
 
   "contact": {
-    "note": "[CẦN ĐIỀN: 1 câu mời liên hệ — VD: Mình thường phản hồi trong vòng 24 giờ.]",
+    "note": "[CẦN ĐIỀN: 1 câu mời liên hệ — VD: Mình sẵn sàng trao đổi về vị trí BA/PO, thường phản hồi trong vòng 24 giờ.]",
     "items": [
       { "label": "Email", "icon": "mail", "value": "[CẦN ĐIỀN: email@example.com]", "url": "[CẦN ĐIỀN: mailto:email@example.com]" },
       { "label": "Điện thoại", "icon": "phone", "value": "[CẦN ĐIỀN: 09xx xxx xxx]", "url": "[CẦN ĐIỀN: tel:+849xxxxxxxx]" },
-      { "label": "Địa điểm", "icon": "globe", "value": "[CẦN ĐIỀN: Thành phố, Việt Nam]", "url": "" }
+      { "label": "Địa điểm", "icon": "globe", "value": "[CẦN ĐIỀN: Hà Nội, Việt Nam]", "url": "" }
     ]
   },
 

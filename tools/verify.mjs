@@ -34,6 +34,14 @@ async function reload() {
   return false;
 }
 
+async function scrollToId(id) {
+  await evalJS(`(() => { const el = document.getElementById('${id}'); const sb = document.documentElement.style.scrollBehavior; document.documentElement.style.scrollBehavior = 'auto'; window.scrollTo(0, el.offsetTop); document.documentElement.style.scrollBehavior = sb; return true; })()`);
+  await sleep(500);
+}
+async function scrollTop() {
+  await evalJS(`document.documentElement.style.scrollBehavior='auto'; window.scrollTo(0,0); document.documentElement.style.scrollBehavior=''; true`);
+  await sleep(400);
+}
 console.log('\n=== 1. Render nội dung từ data.json ===');
 await setViewport(1440, 900);
 await send('Page.enable');
@@ -73,21 +81,43 @@ const counts = await evalJS(`JSON.stringify({
 })`);
 const c = JSON.parse(counts);
 console.log('   ' + counts);
+
+// Kỳ vọng tính TỪ data.json — test không phụ thuộc nội dung cụ thể của CV
+const data = await (await fetch(BASE + 'data.json')).json();
+const sum = (arr, f) => (arr || []).reduce((n, x) => n + f(x), 0);
+const exp = {
+  meta: ['location', 'email', 'phone', 'availability'].filter(k => data.profile[k]).length,
+  cta: 2,
+  socials: (data.profile.socials || []).length,
+  aboutParas: data.about.paragraphs.length,
+  facts: data.about.facts.length,
+  skillCards: data.skills.length,
+  skillItems: sum(data.skills, g => g.items.length),
+  expItems: data.experience.length,
+  expBullets: sum(data.experience, e => (e.bullets || []).length),
+  projectCards: data.projects.length,
+  projectTech: sum(data.projects, p => (p.tech || []).length),
+  edu: data.education.length,
+  certs: data.certificates.length,
+  contactItems: data.contact.items.length
+};
+console.log('   kỳ vọng từ data.json: ' + JSON.stringify(exp));
+
 check('hero có tên', !!c.heroName);
-check('hero meta 4 mục (địa điểm/email/sđt/trạng thái)', c.meta === 4, 'có ' + c.meta);
-check('2 nút CTA', c.cta === 2, 'có ' + c.cta);
-check('4 icon mạng xã hội', c.socials === 4, 'có ' + c.socials);
-check('about có 3 đoạn văn', c.aboutParas === 3, 'có ' + c.aboutParas);
-check('about có 3 ô số liệu', c.facts === 3, 'có ' + c.facts);
-check('kỹ năng: 3 nhóm', c.skillCards === 3, 'có ' + c.skillCards);
-check('kỹ năng: 9 mục', c.skillItems === 9, 'có ' + c.skillItems);
-check('kinh nghiệm: 2 mục timeline', c.expItems === 2, 'có ' + c.expItems);
-check('kinh nghiệm: 5 bullet tổng', c.expBullets === 5, 'có ' + c.expBullets);
-check('dự án: 3 card', c.projectCards === 3, 'có ' + c.projectCards);
-check('dự án: 7 tag tech', c.projectTech === 7, 'có ' + c.projectTech);
-check('học vấn: 1 mục', c.edu === 1, 'có ' + c.edu);
-check('chứng chỉ: 2 mục', c.certs === 2, 'có ' + c.certs);
-check('liên hệ: 3 mục', c.contactItems === 3, 'có ' + c.contactItems);
+check(`hero meta ${exp.meta} mục (địa điểm/email/sđt/trạng thái)`, c.meta === exp.meta, 'có ' + c.meta);
+check('2 nút CTA', c.cta === exp.cta, 'có ' + c.cta);
+check(`${exp.socials} icon mạng xã hội`, c.socials === exp.socials, 'có ' + c.socials);
+check(`about có ${exp.aboutParas} đoạn văn`, c.aboutParas === exp.aboutParas, 'có ' + c.aboutParas);
+check(`about có ${exp.facts} ô số liệu`, c.facts === exp.facts, 'có ' + c.facts);
+check(`kỹ năng: ${exp.skillCards} nhóm`, c.skillCards === exp.skillCards, 'có ' + c.skillCards);
+check(`kỹ năng: ${exp.skillItems} mục`, c.skillItems === exp.skillItems, 'có ' + c.skillItems);
+check(`kinh nghiệm: ${exp.expItems} mục timeline`, c.expItems === exp.expItems, 'có ' + c.expItems);
+check(`kinh nghiệm: ${exp.expBullets} bullet tổng`, c.expBullets === exp.expBullets, 'có ' + c.expBullets);
+check(`dự án: ${exp.projectCards} card`, c.projectCards === exp.projectCards, 'có ' + c.projectCards);
+check(`dự án: ${exp.projectTech} tag tech`, c.projectTech === exp.projectTech, 'có ' + c.projectTech);
+check(`học vấn: ${exp.edu} mục`, c.edu === exp.edu, 'có ' + c.edu);
+check(`chứng chỉ: ${exp.certs} mục`, c.certs === exp.certs, 'có ' + c.certs);
+check(`liên hệ: ${exp.contactItems} mục`, c.contactItems === exp.contactItems, 'có ' + c.contactItems);
 check('KHÔNG có link rỗng href="" hay "#"', c.brokenLinks === 0, 'có ' + c.brokenLinks);
 check('placeholder [CẦN ĐIỀN] hiện trên trang (đúng như yêu cầu)', c.placeholderText > 20, 'có ' + c.placeholderText);
 
@@ -108,7 +138,7 @@ console.log('   ' + JSON.stringify(seo));
 check('meta description có nội dung', !!seo.desc && seo.desc.length > 20);
 check('og:title + og:image', !!seo.ogTitle && /og-image\.png$/.test(seo.ogImage), seo.ogImage);
 check('JSON-LD hợp lệ, @type=Person', seo.ldType === 'Person', String(seo.ldType));
-check('JSON-LD có name + knowsAbout từ data.json', !!seo.ldName && seo.knowsAbout === 9, 'knowsAbout=' + seo.knowsAbout);
+check('JSON-LD có name + knowsAbout từ data.json', !!seo.ldName && seo.knowsAbout === exp.skillItems, 'knowsAbout=' + seo.knowsAbout + ' (kỳ vọng ' + exp.skillItems + ')');
 check('favicon svg', seo.favicon);
 check('lang="vi"', seo.lang === 'vi');
 check('chỉ 1 thẻ h1', seo.h1 === 1, 'có ' + seo.h1);
@@ -143,8 +173,7 @@ const nav0 = JSON.parse(await evalJS(`JSON.stringify({
 })`));
 check('6 anchor nav, tất cả section tồn tại', nav0.anchors.length === 6 && nav0.targetsOk, JSON.stringify(nav0.anchors));
 
-await evalJS(`document.getElementById('projects').scrollIntoView()`);
-await sleep(700);
+await scrollToId('projects');
 const nav1 = JSON.parse(await evalJS(`JSON.stringify({
   current: (document.querySelector('.site-nav a[aria-current="true"]')||{}).textContent || null,
   barWidth: document.getElementById('scroll-bar').style.width,
@@ -155,7 +184,7 @@ check('cuộn tới Dự án → nav đánh dấu đúng mục', nav1.current ==
 check('thanh tiến trình đọc chạy theo scroll', parseFloat(nav1.barWidth) > 0, nav1.barWidth);
 
 await evalJS(`document.getElementById('to-top').click()`);
-await sleep(1200);
+for (let i = 0; i < 20 && (await evalJS('Math.round(window.scrollY)')) !== 0; i++) await sleep(300);
 check('nút "Về đầu trang" đưa về đỉnh trang', (await evalJS('Math.round(window.scrollY)')) === 0, 'y=' + await evalJS('Math.round(window.scrollY)'));
 
 console.log('\n=== 5. Form liên hệ: validate phía client ===');
@@ -245,7 +274,7 @@ check('bản in ẩn nút về đầu trang', printState.footerBtn === 'none');
 check('bản in: chữ đen trên nền trắng', printState.bodyBg === 'rgb(255, 255, 255)', printState.bodyBg);
 check('bản in: card không bị cắt (break-inside avoid)', printState.breakInside === 'avoid', printState.breakInside);
 check('bản in: nội dung fade hiện đủ (opacity 1)', printState.revealOpacity === '1', printState.revealOpacity);
-check('bản in: card chia 2 cột', (printState.cards || '').split(' ').length === 2, printState.cards);
+check('bản in: card dự án chia 3 cột', (printState.cards || '').split(' ').length === 3, printState.cards);
 await send('Emulation.setEmulatedMedia', { media: '' });
 await sleep(300);
 

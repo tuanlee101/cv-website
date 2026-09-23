@@ -397,23 +397,45 @@ a:hover { text-decoration: underline; }
   }
 
   html { scroll-behavior: auto; }
-  body { font-size: 9.6pt; line-height: 1.35; }
+  body { font-size: 9pt; line-height: 1.28; }
 
   /* Bản in gọn để gói trong 1–2 trang A4 */
-  h1, .hero-name { font-size: 19pt; }
-  h2, .section-title { font-size: 12.5pt; }
-  h3, .entry-title { font-size: 10.5pt; }
-  .hero-title { font-size: 10pt; margin-bottom: .2rem; }
-  .hero-summary { font-size: 9.6pt; }
-  .entry-body li { margin-bottom: .1rem; }
-  .timeline > li { padding-bottom: .7rem; }
-  .timeline { padding-left: 1.2rem; }
-  .section-head { margin-bottom: .25rem; }
-  .sub-title { margin-bottom: .4rem; }
-  .card, .skill-card, .fact, .contact-form { padding: .7rem .85rem; }
-  .chip { padding: .1rem .5rem; font-size: 8.6pt; }
-  .facts { gap: 4mm; margin-top: .5rem; }
-  .fact-value { font-size: 13pt; }
+  h1, .hero-name { font-size: 17pt; }
+  h2, .section-title { font-size: 12pt; }
+  h3, .entry-title { font-size: 10pt; }
+  .hero-title { font-size: 9.5pt; margin-bottom: .15rem; }
+  .hero-summary { font-size: 9pt; }
+  .section-sub, .form-hint { display: none !important; }  /* dòng ghi chú/hướng dẫn — không cần trên giấy */
+  .entry-body li { margin-bottom: .05rem; padding-left: .9rem; }
+  .entry-body li::before { width: 4px; height: 4px; }
+  .timeline > li { padding-bottom: .5rem; }
+  .timeline { padding-left: 1rem; }
+  .timeline > li::before { width: 9px; height: 9px; border-width: 2px; left: -1.35rem; }
+  .section { padding: .3rem 0; }
+  .section-head { margin-bottom: .15rem; }
+  .sub-title { margin-bottom: .25rem; }
+  .card, .skill-card, .fact, .contact-form { padding: .55rem .7rem; }
+  /* Kỹ năng trên giấy: tiêu đề nhóm + chip chảy cùng dòng → tiết kiệm gần 1/3 trang */
+  .skill-card { padding: 0 0 .35rem; border: 0; box-shadow: none; background: none; }
+  .skill-card h3 { display: inline; margin: 0 .4rem 0 0; }
+  .skill-card h3::before { display: none; }
+  .skill-card h3::after { content: ":"; }
+  .skill-card .chips { display: inline; }
+  .skill-card .chip { border: 0; padding: 0; background: none; color: #000; }
+  .skill-card .chip::after { content: " ·"; color: #666; }
+  .skill-card .chip:last-child::after { content: ""; }
+  .card-links .link-placeholder { display: none; }  /* chỗ chưa điền link thì không in ra giấy */
+  .chip { padding: .05rem .45rem; font-size: 8pt; }
+  .facts { gap: 3mm; margin-top: .35rem; }
+  .fact-value { font-size: 12pt; }
+  .about-body p { margin-bottom: .35rem; }
+  .skill-card h3 { margin-bottom: .3rem; }
+  .chips { gap: .25rem; }
+  .contact-info li { padding: .35rem 0; }
+  .edu-columns { gap: 5mm; }
+  .avatar { width: 20mm; }
+  .hero-inner { gap: 8mm; }
+  .hero { padding: .2rem 0; }
 
   .no-print, .site-header, .site-footer #to-top, .social-list, .scroll-progress,
   .form-hint, .form-status, #print-btn, #theme-toggle, .skip-link { display: none !important; }
@@ -431,8 +453,9 @@ a:hover { text-decoration: underline; }
 
   /* Không cắt giữa card / mục timeline */
   .card, .timeline > li, .fact, .skill-card, .cert-list li, .contact-form { break-inside: avoid; page-break-inside: avoid; }
-  .cards-grid { grid-template-columns: repeat(2, 1fr); gap: 4mm; }
-  .skills-grid { grid-template-columns: repeat(3, 1fr); gap: 4mm; }
+  .cards-grid { grid-template-columns: repeat(3, 1fr); gap: 3mm; }
+  /* 1 cột cho kỹ năng: chip chảy ngang 1 hàng rộng → thấp hơn nhiều so với 3 cột hẹp */
+  .skills-grid { grid-template-columns: 1fr; gap: 3mm; }
   .edu-columns, .contact-grid { grid-template-columns: 1fr 1fr; gap: 6mm; }
   a { color: #000; text-decoration: none; }
   [data-reveal] { opacity: 1 !important; transform: none !important; }

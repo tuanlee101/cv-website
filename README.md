@@ -21,7 +21,15 @@ cv-website/
 
 ## 1. Sửa nội dung
 
-Mở `data.json`, tìm mọi chỗ có `[CẦN ĐIỀN]` và thay bằng dữ liệu thật:
+Mở `data.json`, tìm mọi chỗ có `[CẦN ĐIỀN]` và thay bằng dữ liệu thật. Bản mặc định đã được
+**định hướng cho vị trí BA/PO (Business Analyst / Product Owner)**: kỹ năng chia theo
+nghiệp vụ & phương pháp / công cụ / kỹ năng mềm, kinh nghiệm theo lộ trình BA → Senior BA → PO,
+chứng chỉ gợi ý PSPO I, CBAP/ECBA. Quy ước chỗ cần điền:
+
+- `[CẦN ĐIỀN: ...]` — thông tin/danh tính thật (tên, email, công ty, trường, link…).
+- `[X]`, `[Y]`, `[N]`, `[X%]` trong các bullet — **số liệu thật của bạn**. Đừng để nguyên con số
+  trong ngoặc vuông khi gửi cho nhà tuyển dụng; mỗi bullet nên là một thành tích có số đo
+  (trước → sau, %, thời gian, số người, số tính năng…).
 
 | Mục trong `data.json` | Nội dung hiển thị |
 |---|---|
