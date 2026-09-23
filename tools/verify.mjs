@@ -335,8 +335,8 @@ await evalJS(`document.documentElement.setAttribute('data-theme','light')`);
 console.log('\n=== 9. Không lỗi console / không request hỏng ===');
 const errs = await evalJS(`JSON.stringify(window.__cvErrors || [])`);
 check('không có lỗi JS khi tải trang', errs === '[]', errs);
-const res = JSON.parse(await evalJS(`JSON.stringify(performance.getEntriesByType('resource').map(r=>({n:r.name.split('/').pop(), s:r.responseStatus||0, t:Math.round(r.transferSize||0)})).filter(r=>r.s>=400||r.t===0))`));
-check('mọi tài nguyên tải OK (không 404, không rỗng)', res.length === 0, JSON.stringify(res));
+const res = JSON.parse(await evalJS(`JSON.stringify(performance.getEntriesByType('resource').map(r=>({n:r.name.split('/').pop(), s:r.responseStatus||0, d:Math.round(r.decodedBodySize||0), t:Math.round(r.transferSize||0)})).filter(r=>r.s>=400||r.d===0))`));
+check('mọi tài nguyên tải OK (không 404, có nội dung thật)', res.length === 0, JSON.stringify(res));
 const resAll = JSON.parse(await evalJS(`JSON.stringify(performance.getEntriesByType('resource').map(r=>r.name.split('/').pop()))`));
 console.log('   tài nguyên đã tải: ' + resAll.join(', '));
 
